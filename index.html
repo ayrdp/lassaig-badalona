@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L'Assaig · Escola de dansa i arts escèniques a Badalona</title>
+<meta name="description" content="Escola de dansa i arts escèniques a Badalona, dirigida per Cristina Miralles. Clàssic, contemporani, jazz, puntes, flamenc, claqué i teatre musical. Centre i La Morera.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ffffff; --ink:#141414; --ink-2:#4a4844; --line:#e2e2e2;
+  --mint:#aef3e3; --lila:#e3b6ef; --mantega:#f6e29c; --herba:#b4e79c;
+  --wa:#1f7a4d;
+  --display:"Big Shoulders Display",Impact,sans-serif;
+  --text:"Schibsted Grotesk",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--text);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+@media (max-width:560px){.wrap{padding:0 18px}}
+
+/* rail vertical (Rambert) */
+.rail{position:fixed;left:0;top:0;bottom:0;width:44px;border-right:1px solid var(--line);display:flex;align-items:center;justify-content:center;z-index:5;background:var(--paper)}
+.rail span{writing-mode:vertical-rl;transform:rotate(180deg);font:700 13px/1 var(--display);letter-spacing:.32em;text-transform:uppercase;color:var(--ink-2)}
+@media (max-width:900px){.rail{display:none}}
+@media (min-width:901px){body{padding-left:44px}}
+
+/* capçalera */
+header{position:sticky;top:0;z-index:4;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:74px}
+.bar img{height:46px;width:auto}
+nav{display:flex;gap:28px;align-items:center;font-size:15px;font-weight:500}
+nav a{text-decoration:none}
+nav a:not(.btn):hover{text-decoration:underline;text-underline-offset:5px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);text-decoration:none;font:600 15px/1 var(--text);padding:15px 22px;border-radius:0;border:0;cursor:pointer;transition:transform .2s cubic-bezier(.2,.8,.2,1)}
+.btn:active{transform:scale(.97)}
+.btn.wa{background:var(--wa);color:#fff}
+@media (max-width:760px){nav a:not(.btn){display:none}.bar img{height:38px}}
+
+/* hero */
+.hero{padding:42px 0 0}
+.count{display:flex;gap:18px;font:700 15px/1 var(--display);letter-spacing:.2em;color:var(--ink-2)}
+.count b{opacity:.18;transition:opacity .25s}
+.count b.on{opacity:1;color:var(--ink)}
+.word{font:900 34vw/.8 var(--display);letter-spacing:-.01em;text-transform:uppercase;margin:18px 0 0 -.04em;white-space:nowrap;display:inline-block;
+  background:url(img/escenari.jpg) center 42%/cover;-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-meta{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;padding:34px 0 56px;border-bottom:1px solid var(--line)}
+.hero-meta h1{font:700 clamp(30px,3.4vw,46px)/1.05 var(--display);text-transform:uppercase;letter-spacing:.01em}
+.hero-meta p{color:var(--ink-2);max-width:44ch}
+.hero-meta .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+@media (max-width:760px){.hero-meta{grid-template-columns:1fr;gap:18px}}
+
+/* què ballem */
+section{padding:96px 0}
+.kicker{font:700 14px/1 var(--display);letter-spacing:.24em;text-transform:uppercase;color:var(--ink-2);margin-bottom:22px}
+.big{margin-bottom:0;font:700 clamp(40px,5.6vw,78px)/.95 var(--display);text-transform:uppercase}
+.disc{margin-top:46px;border-top:1px solid var(--ink)}
+.disc li{list-style:none;display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.disc h3{font:700 clamp(30px,3.6vw,50px)/1 var(--display);text-transform:uppercase}
+.disc p{color:var(--ink-2);font-size:15px;text-align:right;max-width:38ch}
+.tag{display:inline-block;width:14px;height:14px;border-radius:50%;margin-right:14px;vertical-align:.12em}
+@media (max-width:760px){.disc li{grid-template-columns:1fr}.disc p{text-align:left}}
+
+/* buscador */
+.finder{background:var(--ink);color:var(--paper)}
+.finder .kicker{color:#a9a49b}
+.finder .big{max-width:14ch}
+.ctrl{margin-top:44px;display:grid;gap:22px}
+.ctrl label{display:block;font:600 13px/1 var(--text);letter-spacing:.08em;text-transform:uppercase;color:#a9a49b;margin-bottom:12px}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{font:500 15px/1 var(--text);padding:12px 18px;border-radius:999px;border:1px solid #4a4844;background:transparent;color:var(--paper);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.chip[aria-pressed="true"]{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.days{position:relative;display:grid;grid-template-columns:repeat(6,1fr);border:1px solid #4a4844;border-radius:999px;padding:4px}
+.days button{position:relative;z-index:1;background:none;border:0;color:#cfcac0;font:700 17px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;padding:13px 0;cursor:pointer;transition:color .25s}
+.days button[aria-selected="true"]{color:var(--ink)}
+.pill-hl{position:absolute;top:4px;bottom:4px;left:4px;border-radius:999px;background:var(--paper);transition:transform .45s cubic-bezier(.3,1.25,.4,1),width .45s cubic-bezier(.3,1.25,.4,1)}
+.list{margin-top:30px;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;min-height:120px}
+.cls{border-radius:26px;padding:18px 20px 16px;color:var(--ink);display:flex;flex-direction:column;gap:6px;animation:in .35s cubic-bezier(.2,.8,.2,1) both}
+.cls time{font:700 16px/1 var(--display);letter-spacing:.06em}
+.cls h4{font:700 26px/1 var(--display);text-transform:uppercase}
+.cls span{font-size:13px;opacity:.75}
+.cls a{margin-top:8px;align-self:flex-start;font:600 13px/1 var(--text);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:3px}
+.empty{color:#a9a49b;padding:20px 0}
+.note{margin-top:26px;font-size:13px;color:#a9a49b}
+@keyframes in{from{opacity:0;transform:translateY(8px)}}
+@media (max-width:560px){.days button{font-size:14px;letter-spacing:.04em}}
+
+/* fotos */
+.strip{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:auto auto;gap:14px;margin-top:46px}
+.strip figure{overflow:hidden;background:#ddd}
+.strip img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);transition:filter .5s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.strip figure:hover img{filter:none;transform:scale(1.03)}
+.strip .a{grid-row:span 2}
+.strip figure{position:relative}
+.strip figcaption{position:absolute;left:0;bottom:0;font:700 14px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--ink);padding:9px 12px}
+@media (max-width:760px){.strip{grid-template-columns:1fr 1fr}.strip .a{grid-column:span 2;grid-row:auto}}
+
+/* escenari */
+.stage{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.frame{position:relative;aspect-ratio:4/5;overflow:hidden}
+.frame .blur{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(26px) saturate(1.15);transform:scale(1.35)}
+.frame .sharp{position:absolute;left:18%;right:18%;top:20%;bottom:20%;width:64%;height:60%;object-fit:cover;box-shadow:0 30px 60px rgba(0,0,0,.25)}
+.stage ul{list-style:none;margin-top:30px;border-top:1px solid var(--line)}
+.stage li{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid var(--line)}
+.stage li b{font:700 22px/1.1 var(--display);text-transform:uppercase}
+.stage li span{color:var(--ink-2);font-size:15px;text-align:right}
+@media (max-width:860px){.stage{grid-template-columns:1fr}}
+
+/* seus */
+.seus{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:46px}
+.seu{border:1px solid var(--ink);padding:30px;display:flex;flex-direction:column;gap:14px;min-height:260px}
+.seu h3{font:900 clamp(42px,5vw,64px)/.9 var(--display);text-transform:uppercase}
+.seu p{color:var(--ink-2)}
+.seu .row{margin-top:auto;display:flex;gap:16px;flex-wrap:wrap;font-weight:600;font-size:15px}
+@media (max-width:760px){.seus{grid-template-columns:1fr}}
+
+/* tancament */
+.end{border-top:1px solid var(--ink);text-align:left}
+.end .big{font-size:clamp(54px,9vw,140px);max-width:12ch}
+.end .cta{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap}
+footer{padding:28px 0 44px;font-size:13px;color:var(--ink-2);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="rail" aria-hidden="true"><span>Escola de dansa i arts escèniques · Badalona</span></div>
+
+<header>
+  <div class="wrap bar">
+    <a href="#"><img src="img/logo.png" alt="L'Assaig, escola de dansa i arts escèniques Cristina Miralles" width="362" height="156"></a>
+    <nav>
+      <a href="#classes">Classes</a>
+      <a href="#escenari">Escenari</a>
+      <a href="#seus">Seus</a>
+      <a class="btn" href="#prova">Classe de prova</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap hero">
+  <div class="count" aria-hidden="true"><b>5</b><b>6</b><b>7</b><b>8</b></div>
+  <div class="word" aria-hidden="true">Assaig</div>
+  <div class="hero-meta">
+    <h1>Clàssic, contemporani, jazz i teatre musical, des dels tres anys fins a adults.</h1>
+    <div>
+      <p>Escola de dansa i arts escèniques autoritzada per la Generalitat, dirigida per Cristina Miralles. Dues seus a Badalona: Centre i La Morera.</p>
+      <div class="cta">
+        <a class="btn" href="#classes">Troba la teva classe</a>
+        <a class="btn ghost" href="#seus">On som</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2 class="big">Una escola per a cada manera de moure's.</h2>
+    <ul class="disc">
+      <li><h3><i class="tag" style="background:var(--mint)"></i>Clàssic i puntes</h3><p>Base tècnica des de petits fins al nivell avançat i les puntes.</p></li>
+      <li><h3><i class="tag" style="background:var(--lila)"></i>Contemporani</h3><p>De la iniciació a l'avançat, amb grups per edat i nivell.</p></li>
+      <li><h3><i class="tag" style="background:var(--mantega)"></i>Jazz i modern</h3><p>Jazz infantil, juvenil, musical i per a adults.</p></li>
+      <li><h3><i class="tag" style="background:var(--herba)"></i>Teatre musical</h3><p>Cant, interpretació i dansa, en quatre nivells.</p></li>
+      <li><h3><i class="tag" style="background:var(--ink)"></i>Flamenc i claqué</h3><p>Dues disciplines amb ritme propi.</p></li>
+      <li><h3><i class="tag" style="background:transparent;border:1px solid var(--ink)"></i>Adults</h3><p>Dansa, jazz, ioga i pilates. Mai és tard per començar.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="finder" id="classes">
+  <div class="wrap">
+    <h2 class="big">Qui ve a ballar, i quin dia?</h2>
+    <div class="ctrl">
+      <div><label>Edat</label>
+        <div class="chips" id="who">
+          <button class="chip" data-v="petits" aria-pressed="true">Petits · 3 a 6</button>
+          <button class="chip" data-v="primaria" aria-pressed="false">Primària</button>
+          <button class="chip" data-v="eso" aria-pressed="false">ESO i batxillerat</button>
+          <button class="chip" data-v="adults" aria-pressed="false">Adults</button>
+        </div></div>
+      <div><label>Seu</label>
+        <div class="chips" id="seu">
+          <button class="chip" data-v="M" aria-pressed="true">Centre · Mercè 58</button>
+          <button class="chip" data-v="S" aria-pressed="false">La Morera · Pere III 38</button>
+        </div></div>
+      <div class="days" role="tablist" id="days">
+        <span class="pill-hl" id="hl"></span>
+        <button role="tab" data-d="1" aria-selected="true">Dl</button>
+        <button role="tab" data-d="2" aria-selected="false">Dt</button>
+        <button role="tab" data-d="3" aria-selected="false">Dc</button>
+        <button role="tab" data-d="4" aria-selected="false">Dj</button>
+        <button role="tab" data-d="5" aria-selected="false">Dv</button>
+        <button role="tab" data-d="6" aria-selected="false">Ds</button>
+      </div>
+    </div>
+    <div class="list" id="list" aria-live="polite"></div>
+    <p class="note">Horaris orientatius del curs. Escriu-nos i et confirmem grup i plaça.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="big">Barra, mirall i moltes hores d'assaig.</h2>
+    <div class="strip">
+      <figure class="a"><img src="img/classic.jpg" alt="Alumnes de clàssic a l'escenari" loading="lazy"><figcaption>Clàssic</figcaption></figure>
+      <figure><img src="img/jazz.jpg" alt="Grup de jazz amb barret" loading="lazy"><figcaption>Jazz</figcaption></figure>
+      <figure><img src="img/assaig.jpg" alt="Assaig de contemporani" loading="lazy"><figcaption>Contemporani</figcaption></figure>
+      <figure><img src="img/espanyola.jpg" alt="Alumna de dansa espanyola a la barra" loading="lazy"><figcaption>Dansa espanyola</figcaption></figure>
+      <figure><img src="img/aula.jpg" alt="Classe d'estiraments a l'aula" loading="lazy"><figcaption>Preparació física</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="escenari">
+  <div class="wrap stage">
+    <div class="frame"><img class="blur" src="img/escenari.jpg" alt="" aria-hidden="true" loading="lazy"><img class="sharp" src="img/escenari.jpg" alt="Parella de clàssic en una actuació" loading="lazy"></div>
+    <div>
+      <h2 class="big">Per als que volen anar més enllà.</h2>
+      <ul>
+        <li><b>Formació preprofessional</b><span>Dansa i teatre musical, dels 9 als 18 anys</span></li>
+        <li><b>Coreografia</b><span>Grups de formació, dissabtes al matí</span></li>
+        <li><b>Concursos</b><span>Assajos els dissabtes</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="seus">
+  <div class="wrap">
+    <h2 class="big">A prop de casa.</h2>
+    <div class="seus">
+      <article class="seu">
+        <h3>Centre</h3>
+        <p>Carrer de la Mercè, 58 · 08911 Badalona<br>De dilluns a divendres a la tarda, dissabtes al matí.</p>
+        <div class="row"><a href="https://maps.google.com/?q=Carrer+de+la+Merc%C3%A8+58+Badalona" target="_blank" rel="noopener">Com arribar ↗</a><a href="tel:+34658394334">658 39 43 34</a></div>
+      </article>
+      <article class="seu">
+        <h3>La Morera</h3>
+        <p>Carrer de Pere III, 38 · 08915 Badalona<br>De dilluns a divendres a la tarda, dissabtes al matí.</p>
+        <div class="row"><a href="https://maps.google.com/?q=Carrer+de+Pere+III+38+Badalona" target="_blank" rel="noopener">Com arribar ↗</a><a href="tel:+34658394334">658 39 43 34</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="end" id="prova">
+  <div class="wrap">
+    <h2 class="big">La primera classe, per provar.</h2>
+    <div class="cta">
+      <a class="btn wa" href="https://wa.me/34658394334?text=Hola%2C%20voldria%20fer%20una%20classe%20de%20prova%20a%20L%27Assaig." target="_blank" rel="noopener">Escriu-nos per WhatsApp</a>
+      <a class="btn ghost" href="tel:+34658394334">Truca al 658 39 43 34</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap">
+  <span>L'Assaig · Escola de dansa i arts escèniques Cristina Miralles · Badalona</span>
+  <span>Centre: C/ de la Mercè, 58 · La Morera: C/ de Pere III, 38</span>
+</footer>
+
+<script>
+/* p = petits, r = primària, e = ESO, a = adults */
+const C={
+M:{1:[["17:45","Clàssic I","pr"],["17:45","Clàssic II","r"],["17:45","Clàssic III","re"],["18:45","Clàssic IV","e"],["18:45","Puntes I","re"],["18:45","Puntes II","e"],["19:45","Clàssic avançat","e"],["19:45","Jazz IV","e"],["19:45","Puntes III","e"],["20:45","Flamenc","a"],["21:00","Contemporani avançat","ea"]],
+   2:[["17:45","Pre-dansa","p"],["17:45","Jazz I","r"],["17:45","Clàssic base tècnica","e"],["18:30","Jazz II","re"],["18:45","Preparació física I","r"],["18:45","Clàssic V","e"],["19:30","Contemporani IA","r"],["19:30","Jazz III","e"],["19:45","Contemporani III, IV i V","e"],["20:30","Jazz adults","a"]],
+   3:[["17:45","Clàssic I","pr"],["17:45","Clàssic II","r"],["17:45","Clàssic III","re"],["18:45","Contemporani IA i IB","r"],["18:45","Contemporani II","re"],["18:45","Clàssic IV","e"],["19:45","Jazz musical","e"],["19:45","Jazz IV","e"],["19:45","Clàssic VI","e"],["20:45","Modern","a"]],
+   4:[["17:45","Iniciació a la dansa","p"],["17:45","Jazz I","r"],["17:45","Clàssic avançat","e"],["18:45","Clàssic III","re"],["18:45","Jazz II","re"],["18:45","Puntes IV","e"],["19:30","Jazz III","e"],["19:45","Contemporani II","re"],["19:45","Contemporani III, IV i V","e"],["20:30","Jazz adults","a"],["20:45","Flamenc I","a"],["21:30","Flamenc II","a"]],
+   5:[["16:30","Preparació física II","e"],["17:45","Teatre musical I","r"],["17:45","Teatre musical II","re"],["17:45","Teatre musical III","e"],["19:45","Claqué","ea"]],
+   6:[["9:30","Coreografia · formació 1 i 2","r"],["9:30","Coreografia · formació 3 i 4","e"],["9:30","Coreografia · formació 5","e"]]},
+S:{1:[["17:30","Clàssic I","pr","P5 i 1r"],["17:45","Clàssic III","re","5è, 6è i 1r ESO"],["18:45","Contemporani I","re","5è, 6è i 1r ESO"],["18:45","Dansa adults","a"],["20:00","Ioga adults","a"]],
+   2:[["17:30","Iniciació a la dansa","p","P3 i P4"],["17:30","Clàssic II","r","2n, 3r i 4t"],["18:30","Contemporani 0","r","2n, 3r i 4t"],["18:30","Jazz I","re","5è, 6è i 1r ESO"],["19:30","Jazz II","e","A partir de 13 anys"],["19:30","Contemporani avançat","e"]],
+   3:[["17:30","Clàssic I","pr","P5 i 1r"],["17:45","Clàssic III","re","5è, 6è i 1r ESO"],["18:30","Clàssic IV","e","Intermedi"],["18:45","Contemporani I","re","5è, 6è i 1r ESO"],["19:45","Contemporani II","e","Intermedi"],["20:00","Dansa adults","a"]],
+   4:[["17:30","Iniciació a la dansa","p","P3 i P4"],["17:30","Clàssic II","r","2n, 3r i 4t"],["18:30","Jazz 0","r","2n, 3r i 4t"],["18:30","Jazz I","re","5è, 6è i 1r ESO"],["19:30","Jazz II","e","A partir de 13 anys"],["19:30","Clàssic lliure","ea"]],
+   5:[["17:30","Clàssic IV i V","e"],["18:30","Contemporani II i avançat","e"]],
+   6:[["10:00","Concursos","e"]]}};
+const COL={p:"var(--mantega)",r:"var(--herba)",e:"var(--lila)",a:"var(--mint)"};
+const KEY={petits:"p",primaria:"r",eso:"e",adults:"a"};
+const NAME={M:"Centre (Mercè 58)",S:"La Morera (Pere III 38)"};
+const DAY={1:"dilluns",2:"dimarts",3:"dimecres",4:"dijous",5:"divendres",6:"dissabte"};
+let st={who:"petits",seu:"M",d:1};
+const list=document.getElementById('list');
+function render(){
+  const k=KEY[st.who];
+  const rows=(C[st.seu][st.d]||[]).filter(c=>c[2].includes(k));
+  list.innerHTML=rows.length?rows.map((c,i)=>{
+    const msg=encodeURIComponent(`Hola, m'interessa ${c[1]} el ${DAY[st.d]} a les ${c[0]} a la seu ${NAME[st.seu]}. Hi ha plaça per fer una classe de prova?`);
+    return `<div class="cls" style="background:${COL[k]};animation-delay:${i*40}ms"><time>${c[0]} h</time><h4>${c[1]}</h4>${c[3]?`<span>${c[3]}</span>`:''}<a href="https://wa.me/34658394334?text=${msg}" target="_blank" rel="noopener">Demana plaça de prova</a></div>`;
+  }).join(''):`<p class="empty">Aquest dia no hi ha classes per a aquesta edat en aquesta seu. Prova un altre dia o l'altra seu.</p>`;
+}
+function group(id,key){document.getElementById(id).addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;
+  [...e.currentTarget.children].forEach(x=>x.setAttribute('aria-pressed',x===b));st[key]=b.dataset.v;render();});}
+group('who','who');group('seu','seu');
+const days=document.getElementById('days'),hl=document.getElementById('hl');
+function move(b){hl.style.width=b.offsetWidth+'px';hl.style.transform=`translateX(${b.offsetLeft-4}px)`;}
+days.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+  days.querySelectorAll('button').forEach(x=>x.setAttribute('aria-selected',x===b));st.d=+b.dataset.d;move(b);render();});
+addEventListener('resize',()=>move(days.querySelector('[aria-selected="true"]')));
+move(days.querySelector('[aria-selected="true"]'));render();
+/* la paraula omple l'amplada */
+const w=document.querySelector('.word');
+function fit(){w.style.fontSize='100px';const r=w.scrollWidth/100;w.style.fontSize=(w.parentElement.clientWidth/r)+'px';}
+document.fonts.ready.then(fit);addEventListener('resize',fit);
+/* compte d'entrada: 5, 6, 7, 8 */
+const beats=[...document.querySelectorAll('.count b')];
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  beats.forEach((b,i)=>setTimeout(()=>{beats.forEach(x=>x.classList.remove('on'));b.classList.add('on')},300+i*420));
+  setTimeout(()=>beats.forEach(x=>x.classList.add('on')),300+4*420);
+}else beats.forEach(x=>x.classList.add('on'));
+</script>
+</body>
+</html>
